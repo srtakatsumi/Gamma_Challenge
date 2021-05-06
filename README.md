@@ -93,7 +93,7 @@ Sprints:
 
   Todos os demais cuidados foram realizados agora nessa ultima sprint vamos nos ater aos detalhes para o projeto ficar completo e podermos realizar a entrega ao cliente.
   
-    - Será desenvolvido um banco de dados para armazenar a estrutura do estoque(produto / departamentos)
+   - Será desenvolvido um banco de dados para armazenar a estrutura do estoque(produto / departamentos)
     
    - Deve-se também fazer a modelagem de dados dos clientes da empresa (com os seguintes dados obrigatórios: nome, email, whatsapp e senha. E seus endereços que podem ser 1 ou mais com os seguintes dados obrigatórios: Tipo do logradouro, logradouro, número, complemento, cep, bairro, cidade e estado)
     
