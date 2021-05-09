@@ -23,7 +23,7 @@ Sprints:
 
 |                        Tarefa                           | Estimativa |  Início  |  Término  |    Status     |
 |---------------------------------------------------------|------------|----------|-----------|---------------|
-|Configuração do ambiente de desenvolvimento              |    3 hrs   | 10/05/21 | 10/05/21  |    PENDENTE   |
+|Configuração do ambiente de desenvolvimento              |    3 hrs   | 10/05/21 | 10/05/21  |      DONE     |
 |Quantidade total de produtos                             |    2 hrs   | 10/05/21 | 10/05/21  |    PENDENTE   |
 |Listar todos os produtos                                 |    2 hrs   | 10/05/21 | 10/05/21  |    PENDENTE   |
 |Quantidade total de produtos disponíveis                 |    2 hrs   | 10/05/21 | 11/05/21  |    PENDENTE   |
@@ -110,8 +110,8 @@ Sprints:
 |---------------------------------------------------------|------------|----------|-----------|---------------|
 |Modelar dados de produtos e departamentos	              |    2 hrs   | 17/05/21 | 18/05/21  |    PENDENTE   |
 |Criar relações entre produtos e departamentos	          |    2 hrs   | 17/05/21 | 18/05/21  |    PENDENTE   |
-|Modelar dados de clientes                              	|    2 hrs   | 17/05/21 | 18/05/21  |    PENDENTE   |
-|Modelar dados de pedidos                                 |    2 hrs   | 17/05/21 | 18/05/21  |    PENDENTE   |
+|Modelar dados de clientes                              	|    2 hrs   | 17/05/21 | 18/05/21  |      WIP      |
+|Modelar dados de pedidos                                 |    2 hrs   | 17/05/21 | 18/05/21  |      WIP      |
 |Criar relações entre clientes e pedidos	                |    2 hrs   | 19/05/21 | 19/05/21  |    PENDENTE   |
 |Popular banco	                                          |    5 hrs   | 19/05/21 | 19/05/21  |    PENDENTE   |
 |Realizar dumps do banco de dados                         |    4 hrs   | 19/05/21 | 19/05/21  |    PENDENTE   |
