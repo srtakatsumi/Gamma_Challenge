@@ -110,8 +110,8 @@ Sprints:
 |---------------------------------------------------------|------------|----------|-----------|---------------|
 |Modelar dados de produtos e departamentos	              |    2 hrs   | 17/05/21 | 18/05/21  |    PENDENTE   |
 |Criar relações entre produtos e departamentos	          |    2 hrs   | 17/05/21 | 18/05/21  |    PENDENTE   |
-|Modelar dados de clientes                              	|    2 hrs   | 17/05/21 | 18/05/21  |      WIP      |
-|Modelar dados de pedidos                                 |    2 hrs   | 17/05/21 | 18/05/21  |      WIP      |
+|Modelar dados de clientes                              	|    2 hrs   | 17/05/21 | 18/05/21  |    PENDENTE   |
+|Modelar dados de pedidos                                 |    2 hrs   | 17/05/21 | 18/05/21  |    PENDENTE   |
 |Criar relações entre clientes e pedidos	                |    2 hrs   | 19/05/21 | 19/05/21  |    PENDENTE   |
 |Popular banco	                                          |    5 hrs   | 19/05/21 | 19/05/21  |    PENDENTE   |
 |Realizar dumps do banco de dados                         |    4 hrs   | 19/05/21 | 19/05/21  |    PENDENTE   |
