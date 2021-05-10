@@ -24,6 +24,7 @@ Sprints:
 |                        Tarefa                           | Estimativa |  Início  |  Término  |    Status     |
 |---------------------------------------------------------|------------|----------|-----------|---------------|
 |Configuração do ambiente de desenvolvimento              |    3 hrs   | 10/05/21 | 10/05/21  |      DONE     |
+|Planejar a Sprint das tarefas                            |    1 hrs   | 10/05/21 | 10/05/21  |      DONE     |
 |Quantidade total de produtos                             |    2 hrs   | 10/05/21 | 10/05/21  |    PENDENTE   |
 |Listar todos os produtos                                 |    2 hrs   | 10/05/21 | 10/05/21  |    PENDENTE   |
 |Quantidade total de produtos disponíveis                 |    2 hrs   | 10/05/21 | 11/05/21  |    PENDENTE   |
