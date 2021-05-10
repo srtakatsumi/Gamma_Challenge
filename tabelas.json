@@ -5,7 +5,6 @@ DROP TABLE IF EXISTS `pedidos`;
 DROP TABLE IF EXISTS `clientes`;
 */
 
-
 CREATE TABLE `clientes` (
     `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     `name` TEXT NOT NULL,
@@ -16,7 +15,6 @@ CREATE TABLE `clientes` (
     `email` TEXT NOT NULL
 );
 
-
 CREATE TABLE `pedidos`(
     `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     `id_cliente` INTEGER NOT NULL,
@@ -25,7 +23,6 @@ CREATE TABLE `pedidos`(
     FOREIGN KEY (`date`) REFERENCES `clientes`(`id`),
     FOREIGN KEY (`id_cliente`) REFERENCES `clientes`(`id`)
 );
-
     
 CREATE TABLE `products`(
 
@@ -51,4 +48,3 @@ CREATE TABLE `pedidos_product`(
     FOREIGN KEY (`id_cliente`) REFERENCES `clientes`(`id`),
     FOREIGN KEY (`id_pedidos`) REFERENCES `pedidos`(`id`)
 );
-
