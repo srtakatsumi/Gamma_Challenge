@@ -1,9 +1,8 @@
-/*
-DROP TABLE IF EXISTS `pedidos_product`;
-DROP TABLE IF EXISTS `products`;
-DROP TABLE IF EXISTS `pedidos`;
-DROP TABLE IF EXISTS `clientes`;
-*/
+//DROP TABLE IF EXISTS `pedidos_product`;
+//DROP TABLE IF EXISTS `products`;
+//DROP TABLE IF EXISTS `pedidos`;
+//DROP TABLE IF EXISTS `clientes`;
+
 
 CREATE TABLE `clientes` (
     `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
