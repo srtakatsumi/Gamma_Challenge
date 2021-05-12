@@ -45,14 +45,14 @@ Sprints:
 
 |                         Tarefa                          | Estimativa |  Início  |  Término  |    Status     |
 |---------------------------------------------------------|------------|----------|-----------|---------------|
-|Listar produto mais caro do estoque e seu departamento   |    3 hrs   | 11/05/21 | 12/05/21  |    PENDENTE   |
-|Listar produto mais barato do estoque e seu departamento |    3 hrs   | 11/05/21 | 12/05/21  |    PENDENTE   |
-|Quantidade de produtos em destaque                       |    2 hrs   | 12/05/21 | 13/05/21  |    PENDENTE   |
-|Listar produtos em destaque                              |    2 hrs   | 11/05/21 | 12/05/21  |    PENDENTE   |
-|Listar produtos disponíveis                              |    2 hrs   | 11/05/21 | 12/05/21  |    PENDENTE   |
-|Ticket médio dos produtos em destaque                    |    4 hrs   | 12/05/21 | 13/05/21  |    PENDENTE   |
-|Listar produtos indisponíveis                            |    3 hrs   | 12/05/21 | 13/05/21  |    PENDENTE   |
-|Realizar os primeiros testes                             |    4 hrs   | 12/05/21 | 13/05/21  |    PENDENTE   |
+|Listar produto mais caro do estoque e seu departamento   |    3 hrs   | 11/05/21 | 12/05/21  |      DONE     |
+|Listar produto mais barato do estoque e seu departamento |    3 hrs   | 11/05/21 | 12/05/21  |      DONE     |
+|Quantidade de produtos em destaque                       |    2 hrs   | 12/05/21 | 13/05/21  |      DONE     |
+|Listar produtos em destaque                              |    2 hrs   | 11/05/21 | 12/05/21  |      DONE     |
+|Listar produtos disponíveis                              |    2 hrs   | 11/05/21 | 12/05/21  |      DONE     |
+|Ticket médio dos produtos em destaque                    |    4 hrs   | 12/05/21 | 13/05/21  |      DONE     |
+|Listar produtos indisponíveis                            |    3 hrs   | 12/05/21 | 13/05/21  |      DONE     |
+|Realizar os primeiros testes                             |    4 hrs   | 12/05/21 | 13/05/21  |      DONE     |
 
 
 
