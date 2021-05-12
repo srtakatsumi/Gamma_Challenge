@@ -80,7 +80,7 @@ const Produto =
 //Valor total do inventário da empresa (somatória dos valores individuais multiplicado pela quantidade em estoque)
         valorDepart(departamento);{
             if (departamento === departamento){
-                return `O valor por ${departamento} é de ${qtdEstoque}`;
+                return `O valor por ${this.departamento} é de ${this.qtdEstoque}`;
             } 
         }
 
@@ -101,21 +101,21 @@ const Produto =
 
         var valioso = (price){
             if (price > price){
-                return `O produto mais valioso é ${produto._name} `;
+                return `O produto mais valioso é ${this.produto._name} `;
             } 
 
         }
 //Produto mais caro da loja (bem como seu departamento)
         var caro = (price){
             if (price > price){
-                return `O produto mais caro é ${produto._name} `;
+                return `O produto mais caro é ${this.produto._name} `;
             } 
 
         }
 //Produto mais barato da loja (bem como seu departamento)
         var caro = (price){
             if (price < price){
-                return `O produto mais barato é ${produto._name} `;
+                return `O produto mais barato é ${this.produto._name} `;
             } 
 
         }
