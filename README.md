@@ -7,18 +7,17 @@ Contexto:
   _Somos parte de uma equipe de desenvolvimento de software que está criando uma série de ferramentas para gestão de eCommerces. Neste sentido, precisamos atender algumas necessidades de gestores destas plataformas. Precisamos criar soluções para ajudar nossos gestores a extrair dados de inventários de seus respectivos estoques._
 
 
-Sprints:
-    Recursos:
-    - Humanos:  Victoria e Professores da Gama
-    - Ferramentas: Noteebok
-    - Softwares: IDE (Visual Code Studio), NodeJS, MySQL
+Sprints: <br>
+       - [x] Recursos Humanos:  Victoria e Professores da Gama <br>
+       - [x] Ferramentas: Noteebok, internet, livros e vídeos. <br>
+       - [x] Softwares: IDE (Visual Code Studio), NodeJS e MySQL <br>
 
 # Sprint 01 - Produto
 
   _Desenvolver códigos em JavaScript para que os gestores possam ter acesso a dados básicos do estoque de produtos, quais são os produtos cadastrados, quais estão disponiveis e indisponiveis. 
 
   Estimativa: 2 dias
-    Status da Sprint: DONE 
+   - [x] Status da Sprint: DONE 
 
 
 |                        Tarefa                           | Estimativa |  Início  |  Término  |    Status     |
@@ -41,7 +40,7 @@ Sprints:
   _Novos requisitos surgiram, deverá ser desenvolvido novos códigos em JavaScript onde os gestores agora possam filtrar os produtos listando o mais caro e o mais barato junto de seu departamento, listar produtos em destaque e seu respectivo ticket médio (soma do valor dos produtos em destaque dividido pela quantidade de produtos em destaque)._
 
   Estimativa: 2 dias
-    Status da Sprint:  DONE
+   - [x] Status da Sprint:  Pendente
 
 |                         Tarefa                          | Estimativa |  Início  |  Término  |    Status     |
 |---------------------------------------------------------|------------|----------|-----------|---------------|
@@ -61,7 +60,7 @@ Sprints:
   _Validar os códigos em JavaScript para que os gestores possam interagir e verificar o valor do patrimônio de produtos contido no estoque podendo usar essa informação como forma de inventário, também será incluido o ticket médio dos produtos em estoque (soma do valor dos produtos em estoque dividido pela quantidade de produtos)._
  
   Estimativa: 1 dia
-    Status da Sprint: Pendente
+   - [ ] Status da Sprint: Pendente
 
 
 |                         Tarefa                          | Estimativa |  Início  |  Término  |    Status     |
@@ -76,7 +75,7 @@ Sprints:
   _Para poder ter um controle maior que o do estoque de acordo com cada departamento da empresa, os novos um novo diretório será desenvolvido em Javascript para organizar os dados referentes aos produtos de cada departamento, com total de produtos de um departamento, ticket médio do departamento e o departamento que tem o maior valor agregado (soma do valor de todos os produtos de um departamento X a quantidade dos respectivos em estoque)._
 
 Estimativa: 2 dias 
-  Status da Sprint: Pendente
+  - [ ] Status da Sprint: Pendente
 
 |                         Tarefa                          | Estimativa |  Início  |  Término  |    Status     |
 |---------------------------------------------------------|------------|----------|-----------|---------------|
@@ -105,7 +104,7 @@ Estimativa: 2 dias
    - _Realizar dumps específicos do banco de dados._
 
   Estimativa: 4 dias
-    Status da Sprint: Pendente
+   - [ ] Status da Sprint: Pendente
 
 |                         Tarefa                          | Estimativa |  Início  |  Término  |    Status     |
 |---------------------------------------------------------|------------|----------|-----------|---------------|
