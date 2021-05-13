@@ -4,13 +4,13 @@ Desafio hacker
 
 
 Contexto:
-  _Somos parte de uma equipe de desenvolvimento de software que está criando uma série de ferramentas para gestão de eCommerces. Neste sentido, precisamos atender algumas necessidades de gestores destas plataformas. Precisamos criar soluções para ajudar nossos gestores a extrair dados de inventários de seus respectivos estoques._
+ <p>_Somos parte de uma equipe de desenvolvimento de software que está criando uma série de ferramentas para gestão de eCommerces. Neste sentido, precisamos atender algumas necessidades de gestores destas plataformas. Precisamos criar soluções para ajudar nossos gestores a extrair dados de inventários de seus respectivos estoques._</p>
 
 
-Sprints: <br>
-       - [x] Recursos Humanos:  Victoria e Professores da Gama <br>
-       - [x] Ferramentas: Noteebok, internet, livros e vídeos. <br>
-       - [x] Softwares: IDE (Visual Code Studio), NodeJS e MySQL <br>
+<p>Sprints: <br></p>
+       - Recursos Humanos:  Victoria e Professores da Gama <br>
+       - Ferramentas: Noteebok, internet, livros e vídeos. <br>
+       - Softwares: IDE (Visual Code Studio), NodeJS e MySQL <br>
 
 # Sprint 01 - Produto
 
