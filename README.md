@@ -18,7 +18,7 @@ Sprints:
   Desenvolver códigos em JavaScript para que os gestores possam ter acesso a dados básicos do estoque de produtos, quais são os produtos cadastrados, quais estão disponiveis e indisponiveis. 
 
   Estimativa: 2 dias
-  Status da Sprint: Pendente
+    Status da Sprint: DONE [x]
 
 
 |                        Tarefa                           | Estimativa |  Início  |  Término  |    Status     |
@@ -41,7 +41,7 @@ Sprints:
   Novos requisitos surgiram, deverá ser desenvolvido novos códigos em JavaScript onde os gestores agora possam filtrar os produtos listando o mais caro e o mais barato junto de seu departamento, listar produtos em destaque e seu respectivo ticket médio (soma do valor dos produtos em destaque dividido pela quantidade de produtos em destaque).
 
   Estimativa: 2 dias
-  Status da Sprint: Pendente
+    Status da Sprint:  DONE
 
 |                         Tarefa                          | Estimativa |  Início  |  Término  |    Status     |
 |---------------------------------------------------------|------------|----------|-----------|---------------|
@@ -52,7 +52,7 @@ Sprints:
 |Listar produtos disponíveis                              |    2 hrs   | 11/05/21 | 12/05/21  |      DONE     |
 |Ticket médio dos produtos em destaque                    |    4 hrs   | 12/05/21 | 13/05/21  |      DONE     |
 |Listar produtos indisponíveis                            |    3 hrs   | 12/05/21 | 13/05/21  |      DONE     |
-|Realizar os primeiros testes                             |    4 hrs   | 12/05/21 | 13/05/21  |      DONE     |
+|Realizar os primeiros testes                             |    4 hrs   | 12/05/21 | 13/05/21  |      WIP      |
 
 
 
@@ -61,7 +61,7 @@ Sprints:
   Validar os códigos em JavaScript para que os gestores possam interagir e verificar o valor do patrimônio de produtos contido no estoque podendo usar essa informação como forma de inventário, também será incluido o ticket médio dos produtos em estoque (soma do valor dos produtos em estoque dividido pela quantidade de produtos).
  
   Estimativa: 1 dia
-  Status da Sprint: Pendente
+    Status da Sprint: Pendente
 
 
 |                         Tarefa                          | Estimativa |  Início  |  Término  |    Status     |
@@ -73,9 +73,9 @@ Sprints:
 
 # Sprint 04 - Departamentos
 
-  Objetivo da Sprint: Os gestores agora querem poder ter um controle maior do estoque de acordo com os departamentos da empresa, deve ser desenvolvido novos códigos em Javascript para levantar dados referente aos produtos de determinado departamentos, como total de produtos de um departamento, poder mensurar o ticket médio do departamento e saber o departamento de maior valor agregado (somando o valor de todos os produtos de um departamento X a quantidade dos respectivos em estoque).
+  Para poder ter um controle maior que o do estoque de acordo com cada departamento da empresa, os novos um novo diretório será desenvolvido em Javascript para organizar os dados referentes aos produtos de cada departamento, com total de produtos de um departamento, ticket médio do departamento e o departamento que tem o maior valor agregado (soma do valor de todos os produtos de um departamento X a quantidade dos respectivos em estoque).
 
-  Estimativa: 2 dias
+Estimativa: 2 dias 
   Status da Sprint: Pendente
 
 |                         Tarefa                          | Estimativa |  Início  |  Término  |    Status     |
@@ -105,7 +105,7 @@ Sprints:
    - Realizar dumps específicos do banco de dados.
 
   Estimativa: 4 dias
-  Status da Sprint: Pendente
+    Status da Sprint: Pendente
 
 |                         Tarefa                          | Estimativa |  Início  |  Término  |    Status     |
 |---------------------------------------------------------|------------|----------|-----------|---------------|
