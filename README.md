@@ -4,7 +4,7 @@ Desafio hacker
 
 
 Contexto:
-  Somos parte de uma equipe de desenvolvimento de software que está criando uma série de ferramentas para gestão de eCommerces. Neste sentido, precisamos atender algumas necessidades de gestores destas plataformas. Precisamos criar soluções para ajudar nossos gestores a extrair dados de inventários de seus respectivos estoques.
+  _Somos parte de uma equipe de desenvolvimento de software que está criando uma série de ferramentas para gestão de eCommerces. Neste sentido, precisamos atender algumas necessidades de gestores destas plataformas. Precisamos criar soluções para ajudar nossos gestores a extrair dados de inventários de seus respectivos estoques._
 
 
 Sprints:
@@ -15,7 +15,7 @@ Sprints:
 
 # Sprint 01 - Produto
 
-  Desenvolver códigos em JavaScript para que os gestores possam ter acesso a dados básicos do estoque de produtos, quais são os produtos cadastrados, quais estão disponiveis e indisponiveis. 
+  _Desenvolver códigos em JavaScript para que os gestores possam ter acesso a dados básicos do estoque de produtos, quais são os produtos cadastrados, quais estão disponiveis e indisponiveis. 
 
   Estimativa: 2 dias
     Status da Sprint: DONE [x]
@@ -38,7 +38,7 @@ Sprints:
 
 # Sprint 02 - Produto, novos requisitos
 
-  Novos requisitos surgiram, deverá ser desenvolvido novos códigos em JavaScript onde os gestores agora possam filtrar os produtos listando o mais caro e o mais barato junto de seu departamento, listar produtos em destaque e seu respectivo ticket médio (soma do valor dos produtos em destaque dividido pela quantidade de produtos em destaque).
+  _Novos requisitos surgiram, deverá ser desenvolvido novos códigos em JavaScript onde os gestores agora possam filtrar os produtos listando o mais caro e o mais barato junto de seu departamento, listar produtos em destaque e seu respectivo ticket médio (soma do valor dos produtos em destaque dividido pela quantidade de produtos em destaque)._
 
   Estimativa: 2 dias
     Status da Sprint:  DONE
@@ -58,7 +58,7 @@ Sprints:
 
 # Sprint 03 - Empresa e valor.
 
-  Validar os códigos em JavaScript para que os gestores possam interagir e verificar o valor do patrimônio de produtos contido no estoque podendo usar essa informação como forma de inventário, também será incluido o ticket médio dos produtos em estoque (soma do valor dos produtos em estoque dividido pela quantidade de produtos).
+  _Validar os códigos em JavaScript para que os gestores possam interagir e verificar o valor do patrimônio de produtos contido no estoque podendo usar essa informação como forma de inventário, também será incluido o ticket médio dos produtos em estoque (soma do valor dos produtos em estoque dividido pela quantidade de produtos)._
  
   Estimativa: 1 dia
     Status da Sprint: Pendente
@@ -73,7 +73,7 @@ Sprints:
 
 # Sprint 04 - Departamentos
 
-  Para poder ter um controle maior que o do estoque de acordo com cada departamento da empresa, os novos um novo diretório será desenvolvido em Javascript para organizar os dados referentes aos produtos de cada departamento, com total de produtos de um departamento, ticket médio do departamento e o departamento que tem o maior valor agregado (soma do valor de todos os produtos de um departamento X a quantidade dos respectivos em estoque).
+  _Para poder ter um controle maior que o do estoque de acordo com cada departamento da empresa, os novos um novo diretório será desenvolvido em Javascript para organizar os dados referentes aos produtos de cada departamento, com total de produtos de um departamento, ticket médio do departamento e o departamento que tem o maior valor agregado (soma do valor de todos os produtos de um departamento X a quantidade dos respectivos em estoque)._
 
 Estimativa: 2 dias 
   Status da Sprint: Pendente
@@ -90,19 +90,19 @@ Estimativa: 2 dias
 
 
 
-# Sprint 05 - Banco de dados
+# Sprint 05 - Banco de dados 
 
-  Todos os demais cuidados foram realizados agora nessa ultima sprint vamos nos ater aos detalhes para o projeto ficar completo e podermos realizar a entrega ao cliente.
+  _Todos os demais cuidados foram realizados agora nessa ultima sprint vamos nos ater aos detalhes para o projeto ficar completo e podermos realizar a entrega ao cliente._
   
-   - Será desenvolvido um banco de dados para armazenar a estrutura do estoque(produto / departamentos)
+   - _Será desenvolvido um banco de dados para armazenar a estrutura do estoque(produto / departamentos)_
     
-   - Deve-se também fazer a modelagem de dados dos clientes da empresa (com os seguintes dados obrigatórios: nome, email, whatsapp e senha. E seus endereços que podem ser 1 ou mais com os seguintes dados obrigatórios: Tipo do logradouro, logradouro, número, complemento, cep, bairro, cidade e estado)
+   - _Deve-se também fazer a modelagem de dados dos clientes da empresa (com os seguintes dados obrigatórios: nome, email, whatsapp e senha. E seus endereços que podem ser 1 ou mais com os seguintes dados obrigatórios: Tipo do logradouro, logradouro, número, complemento, cep, bairro, cidade e estado)_
     
-   - A modelagem dos dados de pedidos onde deve-se conter dados mínimos como: número pedido, valor total do pedido, data compra, produtos comprados, quantidade, valor unitátio, valor total do produto X quantidade e status dos pedidos (novo pedido, cancelado, aguardando pagamento, pagamento autorizado, pagamento negado, em separação, em transporte, entregue.
+   - _A modelagem dos dados de pedidos onde deve-se conter dados mínimos como: número pedido, valor total do pedido, data compra, produtos comprados, quantidade, valor unitátio, valor total do produto X quantidade e status dos pedidos (novo pedido, cancelado, aguardando pagamento, pagamento autorizado, pagamento negado, em separação, em transporte, entregue._
     
-   - Fazer a relação entre clientes e pedidos
+   - _Fazer a relação entre clientes e pedidos_
    
-   - Realizar dumps específicos do banco de dados.
+   - _Realizar dumps específicos do banco de dados._
 
   Estimativa: 4 dias
     Status da Sprint: Pendente
