@@ -18,7 +18,7 @@ Sprints:
   _Desenvolver códigos em JavaScript para que os gestores possam ter acesso a dados básicos do estoque de produtos, quais são os produtos cadastrados, quais estão disponiveis e indisponiveis. 
 
   Estimativa: 2 dias
-    Status da Sprint: DONE [x]
+    Status da Sprint: DONE 
 
 
 |                        Tarefa                           | Estimativa |  Início  |  Término  |    Status     |
