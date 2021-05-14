@@ -313,16 +313,49 @@ function totalInventario(){
 
 
 
-// Valor do ticket médio dos produtos da empresa (basicamente o valor total do inventário dividido pelo número de itens)
-function excercicio7(){
+// Valor do ticket médio dos produtos da empresa 
+function ticketMedio()
+   let departamento = {
+           id: 0,
+           nomeDepto: "",
+           qtdEstoque: 0
+       }
     
+    let idDepto = 0
+    let soma= 0
+    let quant = 0
+    
+    for (posicao=0; posicao<listProducts.length; posicao++) {
+         if(idDepto != listProducts[posicao].departamento.qtdEstoque){ 
+            quant++
+            soma += listProducts[posicao].departamento.preco;
+        }
+    }
+    console.log("Ticket médio dos produtos da empresa é R$" +(soma / quant));    
+   
 }
 
 
-
-//fita dada Ticket médio por departamento (similar ao item anterior, porém retornando uma lista de objetos que contenha o nome do departamento e o seu ticket médio)
-function excercicio8(){
+//fita dada Ticket médio por departamento 
+function ticketMedioDepto(){
     
+    let soma= 0
+    let quant = 0
+    
+    for (posicao=0; posicao<listProducts.length; posicao++) {
+         if(idDepto != listProducts[posicao].departamento.qtdEstoque){ 
+            quant++
+            soma += listProducts[posicao].departamento.preco;
+        }
+       qtdEstoque = listProducts[posicao].departamento.qtdEstoque;
+            departamento.id = idDepto;
+            departamento.nomeDepto = listProducts[posicao].departamento.nomeDepto;
+            departamento.qtdEstoque = listProducts[posicao].qtdEstoque; 
+    }
+    console.log("Ticket médio dos produtos da empresa é R$" +(soma / quant)); 
+   
+    console.log(departamento);
+}
 }
 
 
@@ -369,14 +402,92 @@ function departamentoValioso(){
 
 
 
-//Produto mais caro da loja (bem como seu departamento)
-function excercicio10(){
+//Produto mais caro da loja 
+function produtoCaro(){
 
+    let departamento = {
+        id: 0,
+        nomeDepto: "",
+        preco: 0
+    }
+    
+    let precoCaro = {
+        id: 0,
+        nomeDepto: "",
+        preco: 0
+    }
+    
+    let precoX = 0
+    for(posicao=0; posicao<listProducts.length; posicao++){
+       
+       if(idDepto != listProducts[posicao].departamento.precoX){   //mudou o departamento
+            if (departamento.preco > listProducts[posicao].departamento.preco){
+               // console.log("Inventario do Departamento...");
+               // console.log(departamento);
+                if (departamento.preco > precoCaro.preco){
+                   precoCaro.id = departamento.id;
+                   precoCaro.nomeDepto = departamento.nomeDepto;
+                   precoCaro.preco = departamento.preco;
+                   
+                }
+            }
+            precoX = listProducts[posicao].departamento.precoX;
+            departamento.id = idDepto;
+            departamento.nomeDepto = listProducts[posicao].departamento.nomeDepto;
+            departamento.inventario = listProducts[posicao].qtdEstoque * listProducts[posicao].preco;
+       }
+       else{  // manteve o departamento
+            departamento.preco = departamento.preco + listProducts[posicao].preco ;
+       }
+    }
+    //console.log(departamento);
+    console.log("O produto mais caro é " + precoCaro);
+}
 }
 
 
 
-//Produto mais barato da loja (bem como seu departamento)
-function excercicio11(){
+//Produto mais barato da loja
+function produtoBarato(){
+   
+   let departamento = {
+        id: 0,
+        nomeDepto: "",
+        preco: 0
+    }
+    
+    let precoCaro = {
+        id: 0,
+        nomeDepto: "",
+        preco: 0
+    }
+    
+    let precoY = 0
+    for(posicao=0; posicao<listProducts.length; posicao++){
+       
+       if(idDepto != listProducts[posicao].departamento.precoY){   //mudou o departamento
+            if (departamento.preco > listProducts[posicao].departamento.preco){
+               // console.log("Inventario do Departamento...");
+               // console.log(departamento);
+                if (departamento.preco < precoCaro.preco){
+                   precoCaro.id = departamento.id;
+                   precoCaro.nomeDepto = departamento.nomeDepto;
+                   precoCaro.preco = departamento.preco;
+                   
+                }
+            }
+            precoY = listProducts[posicao].departamento.precoY;
+            departamento.id = idDepto;
+            departamento.nomeDepto = listProducts[posicao].departamento.nomeDepto;
+            departamento.inventario = listProducts[posicao].qtdEstoque * listProducts[posicao].preco;
+       }
+       else{  // manteve o departamento
+            departamento.preco = departamento.preco + listProducts[posicao].preco ;
+       }
+    }
+    //console.log(departamento);
+    console.log("O produto mais barato é " + produtoBarato);
+}
+}
     
 }
