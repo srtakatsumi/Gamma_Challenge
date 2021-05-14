@@ -2,7 +2,7 @@
 //DROP TABLE IF EXISTS `products`;
 //DROP TABLE IF EXISTS `pedidos`;
 //DROP TABLE IF EXISTS `clientes`;
-
+//banco de dados para ser utilizado futuramente
 
 CREATE TABLE `clientes` (
     `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
