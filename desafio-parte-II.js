@@ -1,6 +1,15 @@
+// criamos aqui uma variavel que vai guardar nossas lista de produtos
+// Essa variavel é uma Array é uma estrutura de dados que armazena uma coleção de elementos de tal forma que cada um dos elementos possa ser identificado por, pelo menos, um índice ou uma chave
+// utilizamos os colchetes para armazernar nossos dados
+
 var listProducts = [
+   
+    //para separar cada produto vamos utilizar chaves, dentro das chaves vamos criar nossas variaveis que vão armazenar as informações
     {
+     // idProduto é nossa variavel e vai armazenar um número nesse caso não precisamos utilizar aspas, pois se trata de um número int, float ou double
     "idProduto": 471185,
+     // no caso da descricao utilizamos as aspas para armazenar nosso texto(string/str)
+        //obs.: se um numero estivesse dentro de aspas, exemplo: "64" ele seria um tipo(type) string
     "descricao": "Suporte para monitor quadrado AC125 UN0001 Multilaser",
     "preco": 64.17,
     "qtdEstoque": 149,
@@ -148,6 +157,7 @@ var listProducts = [
       }
     ]
 
+
 //Quantidade total de itens em estoque (somatória das quantidades de todos os produtos)
 
 function qtdTotalEstoque() {
@@ -169,39 +179,69 @@ function qtdTotalEstoque() {
     console.log("O total de produto no estoque, de todas as categorias é " + totalProdutos);
 }
 
-//Quantidade total de itens em destaque (somatória das quantidades dos itens marcados como "emDestaque : sim")
+
+
+//Quantidade total de itens em destaque 
 
 function qtdItensDestaque() {
      // aqui vamos começar com uma variavel que vai colocar o total de destaque igual a zero
     // para depois atribuirmos um valor a ela
      let totalEmDestaque = 0;
-     for (posicao = 0; posicao < listaProdutos.length; possica++) {
-         let prod = listProducts[pos];
-         if (prod.emDestaque == "sim"){
-             totalEmDestaque = totalEmDestaque + prod.qtdEstoque;
+
+     for (posicao = 0; posicao < listaProdutos.length; posicao++) {
+         let produto = listProducts[posicao];
+        // aqui começa a validar as informaçoes
+         // se produto emDesque(variavel que criamos para armazenar as informações se o produto terá destaque ou não)
+         if (produto.emDestaque == "sim"){
+            //se a informação que armazenamos na variavel emDestaque for igual a "sim"(string)
+             //então vamos criar uma variavel para armazenar essa informação 
+             // adicionamos a somatoria de +1 que seria a mesma coisa de totalEmDestaque++
+             totalEmDestaque++;
          }
      }
-     console.log("Total dos Destaques= " + totalEmDestaque);
+     console.log("O total de itens em destaque é " + totalEmDestaque);
 }
-//Quantidade total de itens disponíveis (similar ao anterior)
-function exercicio3() {
-    // aqui vai seu código
-    // turn yourself around
-}
-//Valor total do inventário da empresa (somatória dos valores individuais multiplicado pela quantidade em estoque)
 
-function exercicio4(){
-    // aqui vai seu código
+
+
+//Quantidade total de itens disponíveis
+function qtdTotaldeItensDisponiveis() {
+     let totalEmDestaque = 0;
+     for (posicao = 0; posicao < listaProdutos.length; posicao++) {
+         let produto = listProducts[posicao];
+        // aqui começa a validar as informaçoes
+         // se produto emDesque(variavel que criamos para armazenar as informações se o produto terá destaque ou não)
+         if (produto.emDestaque == "sim"){
+            //se a informação que armazenamos na variavel emDestaque for igual a "sim"(string)
+             //então vamos criar uma variavel para armazenar essa informação 
+             // adicionamos a somatoria de +1 que seria a mesma coisa de totalEmDestaque++
+             totalEmDestaque= totalEmDestaque + produto.qtdEstoque;
+         }
+     }
+     console.log("O total de itens em destaque é " + totalEmDestaque);
+}
+
+
+
+//Valor total do inventário da empresa
+
+function inventario(){
+    
     let totalInventario = 0;
-    for (pos = 0; pos < listProducts.length; pos++) {
-        let prod = listProducts[pos];
-        totalInventario = totalInventario + prod.qtdEstoque * prod.preco;
+    for (posicao = 0; posicao < listProducts.length; posicao++) {
+        let produto = listProducts[posicao];
+        // para fazer o valor do inventario, somamos o valor do invetario mais o total de itens que tem no estoque vezes o preço dos produtos
+        // lembrando que nosso for já percorre nossa lista e só precisamos informar qual variavel ele deve retornar para retornar esse calculo
+        totalInventario = totalInventario + produto.qtdEstoque * produto.preco;
     }
-    console.log("Total do Inventário R$ "+totalInventario);
+    console.log("O total do Inventário R$ " + totalInventario);
 }
 
-// Somatória de itens por departamento (você deverá retornar um objeto contendo o nome do departamento e o total de itens nele)
-function exercicio5(){
+
+
+
+// Somatória de itens por departamento 
+function somatoriaItensDepto(){
     let departamento = {
         id: 0,
         nomeDepto: "",
@@ -209,39 +249,86 @@ function exercicio5(){
     }
     
     let idDepto = 0
-    for(pos=0; pos<listProducts.length; pos++){
-       if(idDepto != listProducts[pos].departamento.idDepto){   //mudou o departamento
+    for(posicao=0; posicao<listProducts.length; posicao++){
+        // se idDepto for diferente (!=) da lista de produtos
+        //ai vamos chamar nossa variavel acima 
+        //listProducts(nossa variavel que usamos no começo do código para armazenar nossa lista)[posicao].departamento(let departamento, estamos chamando ela para comparar).idDepto então se for diferente 
+       if(idDepto != listProducts[posicao].departamento.idDepto){   
+           // vamos mostrar o nome de outro departamento
+           
+           //se departamento.id for diferente de zero vamos continuar 
             if (departamento.id != 0){
-                console.log("Estoque do Departamento...");
-                console.log(departamento);
+                // e exibir a mensagem abaixo concatenando a nossa variável que antees estava vazia e agora "substituimos as informações que estavam zeradas
+                // a cada departamento exibido essa variavel vai /variando/ a informação
+                console.log("O estoque do Departamento é " + departamento);
             }
-            idDepto = listProducts[pos].departamento.idDepto;
+            idDepto = listProducts[posicao].departamento.idDepto;
             departamento.id = idDepto;
-            departamento.nomeDepto = listProducts[pos].departamento.nomeDepto;
-            departamento.qtdEstoque = listProducts[pos].qtdEstoque;
+            departamento.nomeDepto = listProducts[posicao].departamento.nomeDepto;
+            departamento.qtdEstoque = listProducts[posicao].qtdEstoque;
        }
-       else{  // manteve o departamento
-            departamento.qtdEstoque = departamento.qtdEstoque + listProducts[pos].qtdEstoque;
+       else{  //senão o departamento.qtdEstoque é igual a departamento.qtdEstoque  = quantidade de estoque que
+            departamento.qtdEstoque = departamento.qtdEstoque + listProducts[pososicao].qtdEstoque;
        }
     }
     console.log(departamento);
 }
 
-// Valor total do inventário por departamento (similar ao item anterior)
 
-function excercicio6(){
+
+// Valor total do inventário por departamento
+
+function totalInventario(){
+      let departamento = {
+        id: 0,
+        nomeDepto: "",
+        qtdEstoque: 0
+    }
     
+    let idDepto = 0
+    
+    for(posicao=0; posicao<listProducts.length; posicao++){
+         
+       if(idDepto != listProducts[posicao].departamento.qtdEstoque){   
+           // vamos mostrar o nome de outro departamento
+           
+           //se departamento.id for diferente de zero vamos continuar 
+            if (departamento.qtdEstoque != 0){
+                // e exibir a mensagem abaixo concatenando a nossa variável que antees estava vazia e agora "substituimos as informações que estavam zeradas
+                // a cada departamento exibido essa variavel vai /variando/ a informação
+                console.log("O estoque do invetario do departamento é " + departamento);
+            }
+            qtdEstoque = listProducts[posicao].departamento.qtdEstoque;
+            departamento.id = idDepto;
+            departamento.nomeDepto = listProducts[posicao].departamento.nomeDepto;
+            departamento.qtdEstoque = listProducts[posicao].qtdEstoque;                
+       }
+       else{  // manteve o departamento
+            departamento.qtdEstoque = departamento.qtdEstoque + listProducts[posicao].qtdEstoque;
+       }
+    }
+    console.log(departamento);
 }
+
+
+
+
 // Valor do ticket médio dos produtos da empresa (basicamente o valor total do inventário dividido pelo número de itens)
 function excercicio7(){
     
 }
+
+
+
 //fita dada Ticket médio por departamento (similar ao item anterior, porém retornando uma lista de objetos que contenha o nome do departamento e o seu ticket médio)
 function excercicio8(){
     
 }
-//Departamento mais valioso (qual o departamento que tem a maior somatória dos valores dos itens)
-function exercicio9(){
+
+
+
+//Departamento mais valioso 
+function departamentoValioso(){
     let departamento = {
         id: 0,
         nomeDepto: "",
@@ -255,8 +342,8 @@ function exercicio9(){
     }
     
     let idDepto = 0
-    for(pos=0; pos<listProducts.length; pos++){
-       if(idDepto != listProducts[pos].departamento.idDepto){   //mudou o departamento
+    for(posicao=0; posicao<listProducts.length; posicao++){
+       if(idDepto != listProducts[posicao].departamento.idDepto){   //mudou o departamento
             if (departamento.id != 0){
                // console.log("Inventario do Departamento...");
                // console.log(departamento);
@@ -264,16 +351,16 @@ function exercicio9(){
                    departamentoMaisValioso.id = departamento.id;
                    departamentoMaisValioso.nomeDepto = departamento.nomeDepto;
                    departamentoMaisValioso.inventario = departamento.inventario;
-                   //departamentoMaisValioso = departamento;
+                   
                 }
             }
-            idDepto = listProducts[pos].departamento.idDepto;
+            idDepto = listProducts[posicao].departamento.idDepto;
             departamento.id = idDepto;
-            departamento.nomeDepto = listProducts[pos].departamento.nomeDepto;
-            departamento.inventario = listProductspos].qtdEstoque * listProducts[pos].preco;
+            departamento.nomeDepto = listProducts[posicao].departamento.nomeDepto;
+            departamento.inventario = listProducts[posicao].qtdEstoque * listProducts[posicao].preco;
        }
        else{  // manteve o departamento
-            departamento.inventario = departamento.inventario + listProducts[pos].qtdEstoque * listProducts[pos].preco;
+            departamento.inventario = departamento.inventario + listProducts[posicao].qtdEstoque * listProducts[posicao].preco;
        }
     }
     //console.log(departamento);
@@ -282,11 +369,14 @@ function exercicio9(){
 
 
 
-//fita dada Produto mais caro da loja (bem como seu departamento)
+//Produto mais caro da loja (bem como seu departamento)
 function excercicio10(){
 
 }
-// fita dada Produto mais barato da loja (bem como seu departamento)
+
+
+
+//Produto mais barato da loja (bem como seu departamento)
 function excercicio11(){
     
 }
