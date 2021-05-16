@@ -161,7 +161,7 @@ var listProducts = [
 //Quantidade total de itens em estoque (somatória das quantidades de todos os produtos)
 
 function qtdTotalEstoque() {
-    // aqui vamos começar com uma variavel que vai colocar o total de produtos igual a zero
+    // aqui vamos comecar com uma variavel que vai colocar o total de produtos igual a zero
     // para depois atribuirmos um valor a ela
     let totalProdutos = 0;
     //o laço de for foi criado para que possa percorrer o código 
@@ -169,14 +169,15 @@ function qtdTotalEstoque() {
    // a posicao é zero, enquanto a posicao for menor(<) que a minha lista variavel listProducts, somamos a posicao mais posicao(assim fica posicao+posicao pode ser escrita posicao = posicao + 1 = posicao++)
     for (posicao = 0; posicao < listProducts.length; posicao++) {
         // variavel criada para informar que o produto é igual ao produto na posicao x
-        let produdo = listProducts[posicao];
+        let produto = listProducts[posicao].qtdEstoque;
         
         //total de produto é igual a total de produtos mais o produto.qtdEstoque então aqui definimos qual a informação que desejamos obter
         totalProdutos = totalProdutos + produto.qtdEstoque;
     }
     
     //Vamos retornar a informação de totalProdutos concatenado com uma string entre parenteses
-    console.log("O total de produto no estoque, de todas as categorias é " + totalProdutos);
+    console.log(`O total de produto no estoque, de todas as categorias ${totalProdutos}`);
+ 
 }
 
 
@@ -188,7 +189,7 @@ function qtdItensDestaque() {
     // para depois atribuirmos um valor a ela
      let totalEmDestaque = 0;
 
-     for (posicao = 0; posicao < listaProdutos.length; posicao++) {
+     for (posicao = 0; posicao < listProducts.length; posicao++) {
          let produto = listProducts[posicao];
         // aqui começa a validar as informaçoes
          // se produto emDesque(variavel que criamos para armazenar as informações se o produto terá destaque ou não)
@@ -207,7 +208,7 @@ function qtdItensDestaque() {
 //Quantidade total de itens disponíveis
 function qtdTotaldeItensDisponiveis() {
      let totalEmDestaque = 0;
-     for (posicao = 0; posicao < listaProdutos.length; posicao++) {
+     for (posicao = 0; posicao < listProducts.length; posicao++) {
          let produto = listProducts[posicao];
         // aqui começa a validar as informaçoes
          // se produto emDesque(variavel que criamos para armazenar as informações se o produto terá destaque ou não)
@@ -248,7 +249,7 @@ function somatoriaItensDepto(){
         qtdEstoque: 0
     }
     
-    let idDepto = 0
+    let idDepto = 0;
     for(posicao=0; posicao<listProducts.length; posicao++){
         // se idDepto for diferente (!=) da lista de produtos
         //ai vamos chamar nossa variavel acima 
@@ -314,47 +315,64 @@ function totalInventario(){
 
 
 // Valor do ticket médio dos produtos da empresa 
-function ticketMedio()
-   let departamento = {
-           id: 0,
-           nomeDepto: "",
-           qtdEstoque: 0
-       }
-    
-    let idDepto = 0
-    let soma= 0
-    let quant = 0
-    
-    for (posicao=0; posicao<listProducts.length; posicao++) {
-         if(idDepto != listProducts[posicao].departamento.qtdEstoque){ 
-            quant++
-            soma += listProducts[posicao].departamento.preco;
-        }
-    }
-    console.log("Ticket médio dos produtos da empresa é R$" +(soma / quant));    
+function ticketMedio(){
    
+   // variavel criada para armazenar o valor total do Inventario
+    let totalInventario = 0
+    let totalProdutos= 0
+    let media = 0
+    //length utilizado para percorrer a array
+    for (posicao=0; posicao<listProducts.length; posicao++) {
+       media = media + (listProducts[posicao].preco * listProducts[pos].qtdEstoque);
+        totalProdutos = totalProdutos + listProducts[posicao].qtdEstoque;
+    }
+   media = (totalInventario / totalProdutos);
+    
+    console.log(`Ticket médio dos produtos da empresa é R$ ${media}`);    
+}
 
 
 //fita dada Ticket médio por departamento 
 function ticketMedioDepto(){
+   
+    let totalInventario = 0
+    let totalProdutos= 0
     
-    let soma= 0
-    let quant = 0
+    let media = 0
+    let departamento = {
+        id: 0,
+        nomeDepto: "",
+        qtdEstoque: 0
+    }
     
-    for (posicao=0; posicao<listProducts.length; posicao++) {
-         if(idDepto != listProducts[posicao].departamento.qtdEstoque){ 
-            quant++
-            soma += listProducts[posicao].departamento.preco;
-        }
-       qtdEstoque = listProducts[posicao].departamento.qtdEstoque;
+    let idDepto = 0
+    
+    for(posicao=0; posicao<listProducts.length; posicao++){
+         
+       if(idDepto != listProducts[posicao].departamento.qtdEstoque){   
+           // vamos mostrar o nome de outro departamento
+           
+           //se departamento.id for diferente de zero vamos continuar 
+            if (departamento.qtdEstoque != 0){
+                // e exibir a mensagem abaixo concatenando a nossa variável que antees estava vazia e agora "substituimos as informações que estavam zeradas
+                // a cada departamento exibido essa variavel vai /variando/ a informação
+                console.log("O estoque do invetario do departamento é " + departamento);
+            }
+            qtdEstoque = listProducts[posicao].departamento.qtdEstoque;
             departamento.id = idDepto;
             departamento.nomeDepto = listProducts[posicao].departamento.nomeDepto;
-            departamento.qtdEstoque = listProducts[posicao].qtdEstoque; 
+            departamento.qtdEstoque = listProducts[posicao].qtdEstoque;                
+       }
+       else{  // manteve o departamento
+            departamento.qtdEstoque = departamento.qtdEstoque + listProducts[posicao].qtdEstoque;
+             media = media + (listProducts[posicao].preco * listProducts[pos].qtdEstoque);
+        totalProdutos = totalProdutos + listProducts[posicao].qtdEstoque;
     }
-    console.log("Ticket médio dos produtos da empresa é R$" +(soma / quant)); 
+   media = (totalInventario / totalProdutos);
+        }
    
-    console.log(departamento);
-}
+    console.log(`Ticket médio por departamento da empresa é R$ ${media} ${departamento}`); 
+    }
 
 
 
