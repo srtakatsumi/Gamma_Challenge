@@ -40,7 +40,7 @@ Contexto:
   _Novos requisitos surgiram, deverá ser desenvolvido novos códigos em JavaScript onde os gestores agora possam filtrar os produtos listando o mais caro e o mais barato junto de seu departamento, listar produtos em destaque e seu respectivo ticket médio (soma do valor dos produtos em destaque dividido pela quantidade de produtos em destaque)._
 
   Estimativa: 2 dias
-   - [x] Status da Sprint:  Pendente
+   - [x] Status da Sprint:  DONE
 
 |                         Tarefa                          | Estimativa |  Início  |  Término  |    Status     |
 |---------------------------------------------------------|------------|----------|-----------|---------------|
@@ -51,7 +51,7 @@ Contexto:
 |Listar produtos disponíveis                              |    2 hrs   | 11/05/21 | 12/05/21  |      DONE     |
 |Ticket médio dos produtos em destaque                    |    4 hrs   | 12/05/21 | 13/05/21  |      DONE     |
 |Listar produtos indisponíveis                            |    3 hrs   | 12/05/21 | 13/05/21  |      DONE     |
-|Realizar os primeiros testes                             |    4 hrs   | 12/05/21 | 13/05/21  |      WIP      |
+|Realizar os primeiros testes                             |    4 hrs   | 12/05/21 | 13/05/21  |      DONE     |
 
 
 
@@ -60,14 +60,14 @@ Contexto:
   _Validar os códigos em JavaScript para que os gestores possam interagir e verificar o valor do patrimônio de produtos contido no estoque podendo usar essa informação como forma de inventário, também será incluido o ticket médio dos produtos em estoque (soma do valor dos produtos em estoque dividido pela quantidade de produtos)._
  
   Estimativa: 1 dia
-   - [ ] Status da Sprint: Pendente
+   - [x] Status da Sprint: DONE
 
 
 |                         Tarefa                          | Estimativa |  Início  |  Término  |    Status     |
 |---------------------------------------------------------|------------|----------|-----------|---------------|
-|Valor do patrimônio em produtos no estoque (inventário)  |    3 hrs   | 15/05/21 | 15/05/21  |    PENDENTE   |
-|Ticket médio do total de produtos em estoque             |    2 hrs   | 15/05/21 | 15/05/21  |    PENDENTE   |
-|Realizar os testes                                       |    4 hrs   | 15/05/21 | 15/05/21  |    PENDENTE   |
+|Valor do patrimônio em produtos no estoque (inventário)  |    3 hrs   | 15/05/21 | 15/05/21  |      DONE     |
+|Ticket médio do total de produtos em estoque             |    2 hrs   | 15/05/21 | 15/05/21  |      DONE     |
+|Realizar os testes                                       |    4 hrs   | 15/05/21 | 15/05/21  |      DONE     |
 
 
 # Sprint 04 - Departamentos
@@ -75,17 +75,17 @@ Contexto:
   _Para poder ter um controle maior que o do estoque de acordo com cada departamento da empresa, os novos um novo diretório será desenvolvido em Javascript para organizar os dados referentes aos produtos de cada departamento, com total de produtos de um departamento, ticket médio do departamento e o departamento que tem o maior valor agregado (soma do valor de todos os produtos de um departamento X a quantidade dos respectivos em estoque)._
 
 Estimativa: 2 dias 
-  - [ ] Status da Sprint: Pendente
+  - [x] Status da Sprint: DONE
 
 |                         Tarefa                          | Estimativa |  Início  |  Término  |    Status     |
 |---------------------------------------------------------|------------|----------|-----------|---------------|
-|Quantidade total de produtos de um departamento          |    3 hrs   | 10/05/21 | 10/05/21  |    PENDENTE   |
-|Listar quantidade total de produtos de um departamento   |    2 hrs   | 10/05/21 | 10/05/21  |    PENDENTE   |
-|Levantar inventário de um departamento.	                |    2 hrs   | 10/05/21 | 10/05/21  |    PENDENTE   |
-|Ticket médio do total de produtos de um departamento.   	|    2 hrs   | 10/05/21 | 10/05/21  |    PENDENTE   |
-|Descobrir departamento mais valioso.	                    |    2 hrs   | 10/05/21 | 10/05/21  |    PENDENTE   |
-|Listar produto mais caro de um departamento	            |    2 hrs   | 10/05/21 | 10/05/21  |    PENDENTE   |
-|Listar produto mais barato de um departamento            |    2 hrs   | 10/05/21 | 10/05/21  |    PENDENTE   |
+|Quantidade total de produtos de um departamento          |    3 hrs   | 10/05/21 | 10/05/21  |      DONE     |
+|Listar quantidade total de produtos de um departamento   |    2 hrs   | 10/05/21 | 10/05/21  |      DONE     |
+|Levantar inventário de um departamento.	                 |    2 hrs   | 10/05/21 | 10/05/21  |      DONE     |
+|Ticket médio do total de produtos de um departamento.   	|    2 hrs   | 10/05/21 | 10/05/21  |      DONE     |
+|Descobrir departamento mais valioso.	                    |    2 hrs   | 10/05/21 | 10/05/21  |      DONE     |
+|Listar produto mais caro de um departamento	             |    2 hrs   | 10/05/21 | 10/05/21  |      DONE     |
+|Listar produto mais barato de um departamento            |    2 hrs   | 10/05/21 | 10/05/21  |      DONE     |
 
 
 
@@ -104,16 +104,16 @@ Estimativa: 2 dias
    - _Realizar dumps específicos do banco de dados._
 
   Estimativa: 4 dias
-   - [ ] Status da Sprint: Pendente
+   - [ ] Status da Sprint: WIP
 
 |                         Tarefa                          | Estimativa |  Início  |  Término  |    Status     |
 |---------------------------------------------------------|------------|----------|-----------|---------------|
-|Modelar dados de produtos e departamentos	              |    2 hrs   | 17/05/21 | 18/05/21  |    PENDENTE   |
-|Criar relações entre produtos e departamentos	          |    2 hrs   | 17/05/21 | 18/05/21  |    PENDENTE   |
-|Modelar dados de clientes                              	|    2 hrs   | 17/05/21 | 18/05/21  |    PENDENTE   |
-|Modelar dados de pedidos                                 |    2 hrs   | 17/05/21 | 18/05/21  |    PENDENTE   |
-|Criar relações entre clientes e pedidos	                |    2 hrs   | 19/05/21 | 19/05/21  |    PENDENTE   |
-|Popular banco	                                          |    5 hrs   | 19/05/21 | 19/05/21  |    PENDENTE   |
-|Realizar dumps do banco de dados                         |    4 hrs   | 19/05/21 | 19/05/21  |    PENDENTE   |
+|Modelar dados de produtos e departamentos	               |    2 hrs   | 17/05/21 | 18/05/21  |      WIP      |
+|Criar relações entre produtos e departamentos	           |    2 hrs   | 17/05/21 | 18/05/21  |      WIP      |
+|Modelar dados de clientes                               	|    2 hrs   | 17/05/21 | 18/05/21  |      WIP      |
+|Modelar dados de pedidos                                 |    2 hrs   | 17/05/21 | 18/05/21  |      WIP      |
+|Criar relações entre clientes e pedidos	                 |    2 hrs   | 19/05/21 | 19/05/21  |      WIP      |
+|Popular banco	                                           |    5 hrs   | 19/05/21 | 19/05/21  |      WIP      |
+|Realizar dumps do banco de dados                         |    4 hrs   | 19/05/21 | 19/05/21  |      WIP      |
 |Realizar os testes                                       |    4 hrs   | 20/05/21 | 20/05/21  |    PENDENTE   |
 |Entregar do projeto                                      |    15 min  | 20/05/21 | 20/05/21  |    PENDENTE   |
