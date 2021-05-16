@@ -164,19 +164,19 @@ function qtdTotalEstoque() {
     // aqui vamos comecar com uma variavel que vai colocar o total de produtos igual a zero
     // para depois atribuirmos um valor a ela
     let totalProdutos = 0;
+
     //o laço de for foi criado para que possa percorrer o código 
     //inicio o for com uma variavel criada posicao, sem acento ou cedilha, pois o código não entende esses caracteres especiais (obs.: poderia ser qualquer nome, ex: i, j, produtoPosicao)
    // a posicao é zero, enquanto a posicao for menor(<) que a minha lista variavel listProducts, somamos a posicao mais posicao(assim fica posicao+posicao pode ser escrita posicao = posicao + 1 = posicao++)
     for (posicao = 0; posicao < listProducts.length; posicao++) {
         // variavel criada para informar que o produto é igual ao produto na posicao x
-        let produto = listProducts[posicao].qtdEstoque;
+        let produto = listProducts[posicao];
         
         //total de produto é igual a total de produtos mais o produto.qtdEstoque então aqui definimos qual a informação que desejamos obter
         totalProdutos = totalProdutos + produto.qtdEstoque;
-    }
-    
+    }   
     //Vamos retornar a informação de totalProdutos concatenado com uma string entre parenteses
-    console.log(`O total de produto no estoque, de todas as categorias ${totalProdutos}`);
+    console.log("O total de produto no estoque, de todas as categorias " + totalProdutos);
  
 }
 
@@ -251,6 +251,7 @@ function somatoriaItensDepto(){
     
     let idDepto = 0;
     for(posicao=0; posicao<listProducts.length; posicao++){
+
         // se idDepto for diferente (!=) da lista de produtos
         //ai vamos chamar nossa variavel acima 
         //listProducts(nossa variavel que usamos no começo do código para armazenar nossa lista)[posicao].departamento(let departamento, estamos chamando ela para comparar).idDepto então se for diferente 
@@ -258,10 +259,12 @@ function somatoriaItensDepto(){
            // vamos mostrar o nome de outro departamento
            
            //se departamento.id for diferente de zero vamos continuar 
-            if (departamento.id != 0){
+            if (departamento.idDepto != 0){
                 // e exibir a mensagem abaixo concatenando a nossa variável que antees estava vazia e agora "substituimos as informações que estavam zeradas
                 // a cada departamento exibido essa variavel vai /variando/ a informação
-                console.log("O estoque do Departamento é " + departamento);
+                console.log("O estoque do Departamento é ");
+                console.log(departamento);
+                
             }
             idDepto = listProducts[posicao].departamento.idDepto;
             departamento.id = idDepto;
@@ -269,10 +272,9 @@ function somatoriaItensDepto(){
             departamento.qtdEstoque = listProducts[posicao].qtdEstoque;
        }
        else{  //senão o departamento.qtdEstoque é igual a departamento.qtdEstoque  = quantidade de estoque que
-            departamento.qtdEstoque = departamento.qtdEstoque + listProducts[pososicao].qtdEstoque;
+            departamento.qtdEstoque = departamento.qtdEstoque + listProducts[posicao].qtdEstoque;
        }
     }
-    console.log(departamento);
 }
 
 
@@ -280,6 +282,7 @@ function somatoriaItensDepto(){
 // Valor total do inventário por departamento
 
 function totalInventario(){
+
       let departamento = {
         id: 0,
         nomeDepto: "",
@@ -287,7 +290,8 @@ function totalInventario(){
     }
     
     let idDepto = 0
-    
+    let totalInventario = 0;
+
     for(posicao=0; posicao<listProducts.length; posicao++){
          
        if(idDepto != listProducts[posicao].departamento.qtdEstoque){   
@@ -297,18 +301,19 @@ function totalInventario(){
             if (departamento.qtdEstoque != 0){
                 // e exibir a mensagem abaixo concatenando a nossa variável que antees estava vazia e agora "substituimos as informações que estavam zeradas
                 // a cada departamento exibido essa variavel vai /variando/ a informação
-                console.log("O estoque do invetario do departamento é " + departamento);
+                console.log("O estoque do invetario por departamento é ");
+                console.log(departamento);
+
             }
             qtdEstoque = listProducts[posicao].departamento.qtdEstoque;
-            departamento.id = idDepto;
+            departamento.idDepto = idDepto;
             departamento.nomeDepto = listProducts[posicao].departamento.nomeDepto;
-            departamento.qtdEstoque = listProducts[posicao].qtdEstoque;                
+            departamento.qtdEstoque = listProducts[posicao].qtdEstoque;                     
        }
-       else{  // manteve o departamento
+       else{  
             departamento.qtdEstoque = departamento.qtdEstoque + listProducts[posicao].qtdEstoque;
        }
     }
-    console.log(departamento);
 }
 
 
@@ -321,14 +326,16 @@ function ticketMedio(){
     let totalInventario = 0
     let totalProdutos= 0
     let media = 0
+
     //length utilizado para percorrer a array
     for (posicao=0; posicao<listProducts.length; posicao++) {
-       media = media + (listProducts[posicao].preco * listProducts[pos].qtdEstoque);
+
         totalProdutos = totalProdutos + listProducts[posicao].qtdEstoque;
-    }
-   media = (totalInventario / totalProdutos);
+        totalInventario = totalInventario + listProducts[posicao].qtdEstoque * listProducts[posicao].preco;
+        media = (totalInventario / totalProdutos);
     
-    console.log(`Ticket médio dos produtos da empresa é R$ ${media}`);    
+    }  
+    console.log("Ticket médio dos produtos da empresa é R$ " + media);    
 }
 
 
@@ -356,7 +363,8 @@ function ticketMedioDepto(){
             if (departamento.qtdEstoque != 0){
                 // e exibir a mensagem abaixo concatenando a nossa variável que antees estava vazia e agora "substituimos as informações que estavam zeradas
                 // a cada departamento exibido essa variavel vai /variando/ a informação
-                console.log("O estoque do invetario do departamento é " + departamento);
+                console.log("O estoque do invetario do departamento é ");
+                console.log(departamento);
             }
             qtdEstoque = listProducts[posicao].departamento.qtdEstoque;
             departamento.id = idDepto;
@@ -365,13 +373,13 @@ function ticketMedioDepto(){
        }
        else{  // manteve o departamento
             departamento.qtdEstoque = departamento.qtdEstoque + listProducts[posicao].qtdEstoque;
-             media = media + (listProducts[posicao].preco * listProducts[pos].qtdEstoque);
-        totalProdutos = totalProdutos + listProducts[posicao].qtdEstoque;
+            totalProdutos = totalProdutos + listProducts[posicao].qtdEstoque;
+            totalInventario = totalInventario + listProducts[posicao].qtdEstoque * listProducts[posicao].preco;
+            media = (totalInventario / totalProdutos);
     }
-   media = (totalInventario / totalProdutos);
         }
    
-    console.log(`Ticket médio por departamento da empresa é R$ ${media} ${departamento}`); 
+    console.log("Ticket médio por departamento da empresa é R$ " + media); 
     }
 
 
@@ -413,7 +421,8 @@ function departamentoValioso(){
        }
     }
     //console.log(departamento);
-    console.log("O departamento mais valioso é " + departamentoMaisValioso);
+    console.log("O departamento mais valioso é ");
+    console.log(departamentoMaisValioso);
 }
 
 
@@ -436,7 +445,7 @@ function produtoCaro(){
     let precoX = 0
     for(posicao=0; posicao<listProducts.length; posicao++){
        
-       if(idDepto != listProducts[posicao].departamento.precoX){   //mudou o departamento
+       if(idDepto != listProducts[posicao].departamento.precoX) {   //mudou o departamento
             if (departamento.preco > listProducts[posicao].departamento.preco){
                // console.log("Inventario do Departamento...");
                // console.log(departamento);
@@ -457,7 +466,8 @@ function produtoCaro(){
        }
     }
     //console.log(departamento);
-    console.log("O produto mais caro é " + precoCaro);
+    console.log("O produto mais caro é ");
+    console.log(precoCaro);
 }
 
 
@@ -472,7 +482,7 @@ function produtoBarato(){
         preco: 0
     }
     
-    let precoCaro = {
+    let precoBarato = {
         id: 0,
         nomeDepto: "",
         preco: 0
@@ -485,10 +495,10 @@ function produtoBarato(){
             if (departamento.preco > listProducts[posicao].departamento.preco){
                // console.log("Inventario do Departamento...");
                // console.log(departamento);
-                if (departamento.preco < precoCaro.preco){
-                   precoCaro.id = departamento.id;
-                   precoCaro.nomeDepto = departamento.nomeDepto;
-                   precoCaro.preco = departamento.preco;
+                if (departamento.preco < precoBarato.preco){
+                    precoBarato.id = departamento.id;
+                    precoBarato.nomeDepto = departamento.nomeDepto;
+                    precoBarato.preco = departamento.preco;
                    
                 }
             }
@@ -502,5 +512,6 @@ function produtoBarato(){
        }
     }
     //console.log(departamento);
-    console.log("O produto mais barato é " + produtoBarato);
+    console.log("O produto mais barato é ");
+    console.log(produtoBarato)
 }
