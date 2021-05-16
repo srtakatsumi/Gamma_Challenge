@@ -1,3 +1,7 @@
+# III parte do desafio
+
+Proposta: 
+
 Nesta atividade precisamos também modelar (segundo o modelo Entidade/Relacionamento, conversão para modelo Relacional e modelo físico) desta estrutura de dados recebida na Atividade 2, bem como a inclusão dos seguintes itens:
 
 - (já contemplado na estrutura), todo produto possui como características, seu código, descrição, preço, quantidade em Estoque, se ele está disponível para comercialização e se ele está em destaque no portal da loja virtual.
