@@ -8,9 +8,9 @@ select sum(products.price), departament.nameDept
 from products
 inner join departament
 on products.idDepartment = departament.idDept
-group by departament.id;
+group by departament.idDept;
 
--- Valor total de estoque por departamento
+-- Valor total de itens por departamento
 select count(products.codProduct), departament.nameDept
 from products
 inner join departament
@@ -39,12 +39,29 @@ on pessoas.id = address.idcliente
 inner join city
 on address.city = city.idcity;
 
---  Exibe lista de cliente com o endereço e cidade
-SELECT * from pessoas
-inner join address
+--  errada MUDAR lista de cliente com o endereço e cidade
+SELECT sum(requests.statusPedido) 
+from pessoas
+inner join requests
+on pessoas.id = requests.idClient
+inner join status
+on status.statusPedido = requests.statusPedido
+group by requests.statusPedido;
+
+-- errado
+select pessoas.id, pessoas.nome from pessoas
+inner join requests
+on pessoas.id = requests.idClient
+inner join status
+on status.statusPedido = requests.statusPedido
+group by requests.statusPedido;
+
+-- errada
+select pessoas.nome,pessoas.CPF,pessoas.phone, sum(totalorders.price) as valortotal,
+address.typePublicPlace, address.publicPlace, address.zipCode, address.city,city.state, city.district from pessoas
+inner join pessoas
 on pessoas.id = address.idcliente
-inner join city
-on address.city = city.idcity;
+group by pessoas.id;
 
-
-
+-- Mostra o nome, cpf, e-mail e senha
+select pessoas.nome,pessoas.CPF,pessoas.email,pessoas.senha from bancodedados.pessoas ;
