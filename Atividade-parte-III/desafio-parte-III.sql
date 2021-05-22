@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `bancodedados` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `bancodedados`;
 -- MySQL dump 10.13  Distrib 8.0.25, for Win64 (x86_64)
 --
 -- Host: localhost    Database: bancodedados
@@ -23,16 +25,16 @@ DROP TABLE IF EXISTS `address`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `address` (
-  `idendereco` int NOT NULL AUTO_INCREMENT,
-  `idcliente` int NOT NULL,
+  `idEndereco` int NOT NULL AUTO_INCREMENT,
+  `idCliente` int NOT NULL,
   `typePublicPlace` varchar(10) DEFAULT NULL,
   `publicPlace` varchar(100) NOT NULL,
   `zipCode` int NOT NULL,
   `number` varchar(45) NOT NULL,
   `complement` varchar(45) DEFAULT NULL,
   `city` int NOT NULL,
-  PRIMARY KEY (`idendereco`),
-  KEY `fkcliente_idx` (`idcliente`),
+  PRIMARY KEY (`idEndereco`),
+  KEY `fkcliente_idx` (`idCliente`),
   KEY `fkCity_idx` (`city`),
   KEY `city_idx` (`city`),
   CONSTRAINT `city` FOREIGN KEY (`city`) REFERENCES `city` (`idcity`)
@@ -62,7 +64,7 @@ CREATE TABLE `city` (
   `state` varchar(100) NOT NULL,
   `district` varchar(100) NOT NULL,
   PRIMARY KEY (`idcity`),
-  CONSTRAINT `fkcity` FOREIGN KEY (`idcity`) REFERENCES `address` (`idendereco`)
+  CONSTRAINT `fkcity` FOREIGN KEY (`idcity`) REFERENCES `address` (`idEndereco`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -74,6 +76,38 @@ LOCK TABLES `city` WRITE;
 /*!40000 ALTER TABLE `city` DISABLE KEYS */;
 INSERT INTO `city` VALUES (1,'São Paulo','SP','Itu'),(2,'Rio de Janeiro','Barra da Tijuca','Vila da Penha'),(3,'Rio De Janeiro','Complexo do alemão','Icaraí'),(4,'Rio Grande Do Sul','Porto Alegre','Azenha'),(5,'Acre','Rio Branco','Aviário'),(6,'Amapá','Macapá','Maruanum'),(7,'Amazonas','Manaus','Chapada'),(8,'Alagoas','Maceió','Guaxuma'),(9,'Salvador','Bahia','Alto das Pombas'),(10,'Fortaleza','Ceará','Meireles'),(11,'Brasília','Distrito Federal','Asa Norte'),(12,'Vitória','Espírito Santo','Jardim Camburi'),(13,'Goiânia','Goiás','Jardim América'),(14,'São Luís','Maranhão','Conjunto São Raimundo');
 /*!40000 ALTER TABLE `city` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `client`
+--
+
+DROP TABLE IF EXISTS `client`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `client` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(45) NOT NULL,
+  `last_name` varchar(45) NOT NULL,
+  `CPF` varchar(45) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `endereco` int DEFAULT NULL,
+  `email` varchar(100) NOT NULL,
+  `senha` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fkenderecopessoas_idx` (`endereco`),
+  CONSTRAINT `fkenderecopessoas` FOREIGN KEY (`endereco`) REFERENCES `address` (`idEndereco`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `client`
+--
+
+LOCK TABLES `client` WRITE;
+/*!40000 ALTER TABLE `client` DISABLE KEYS */;
+INSERT INTO `client` VALUES (2,'Victoria','Katsumi','66655533322','11961971223',1,'srta.katsumi@gmail.com','alecrimelimao'),(3,'Pitty','Quadrado','11433066774','11982847552',2,'pitty@yahoo.com.br','setevidas'),(4,'Marilyn','Manson','12345678914','1123245655',3,'sweet.dreams@hotmail.com','beautifulpeople'),(5,'Axl','Rose','659878123','1161781999',4,'paradise.city@gmail.com','novemberrain'),(6,'Douglas','Jackson','12345678999','11961978855',5,'douglas@gmail.com','solitariosurfista'),(7,'Fernanda','Simonal','12366698754','1132405698',6,'fernandinha@gmail.com','chantaje'),(8,'Ana','Cristina','12366698755','1132405878',7,'ana@gmail.com','calhamberque'),(9,'Aderbaldo','','12366698755','1132405878',8,'aderbaldo@gmail.com','ssetevidas'),(10,'Gabriel','Filosofo','56987888822','112347698',9,' playboy@gmail.com','cachimbodapaz'),(11,'Geralda','Swift','12366688755','1132415878',10,'geralda@gmail.com','crushcrushcrush'),(12,'Itamar','Mulan','12366699755','1132425878',11,'itamarzinho@gmail.com','estudoerrado'),(13,'Juca','Muato','12366698755','1132435878',12,'juquinha@gmail.com','mascara'),(14,'Jorge','Campos','12366698755','1132445878',13,'jorge.campos@gmail.com','felicidade'),(15,'Jao','Vegas','12366698755','1132555878',14,'vegas.j@gmail.com','xepanasestrelas'),(16,'Andre','Goku','12366698755','1132405878',15,'andre.goku@gmail.com','kamehameha');
+/*!40000 ALTER TABLE `client` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -151,38 +185,6 @@ INSERT INTO `paymentform` VALUES (1,'Boleto'),(2,'Cartão de crédito'),(3,'Cart
 UNLOCK TABLES;
 
 --
--- Table structure for table `pessoas`
---
-
-DROP TABLE IF EXISTS `pessoas`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `pessoas` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(45) NOT NULL,
-  `last_name` varchar(45) NOT NULL,
-  `CPF` varchar(45) NOT NULL,
-  `phone` varchar(20) NOT NULL,
-  `endereco` int DEFAULT NULL,
-  `email` varchar(100) NOT NULL,
-  `senha` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fkenderecopessoas_idx` (`endereco`),
-  CONSTRAINT `fkenderecopessoas` FOREIGN KEY (`endereco`) REFERENCES `address` (`idendereco`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `pessoas`
---
-
-LOCK TABLES `pessoas` WRITE;
-/*!40000 ALTER TABLE `pessoas` DISABLE KEYS */;
-INSERT INTO `pessoas` VALUES (2,'Victoria','Katsumi','66655533322','11961971223',NULL,'srta.katsumi@gmail.com','alecrimelimao'),(3,'Pitty','Quadrado','11433066774','11982847552',NULL,'pitty@yahoo.com.br','setevidas'),(4,'Marilyn','Manson','12345678914','1123245655',NULL,'sweet.dreams@hotmail.com','beautifulpeople'),(5,'Axl','Rose','659878123','1161781999',NULL,'paradise.city@gmail.com','novemberrain'),(6,'Douglas','Jackson','12345678999','11961978855',NULL,'douglas@gmail.com','solitariosurfista'),(7,'Fernanda','Simonal','12366698754','1132405698',NULL,'fernandinha@gmail.com','chantaje'),(8,'Ana','Cristina','12366698755','1132405878',NULL,'ana@gmail.com','calhamberque'),(9,'Aderbaldo','','12366698755','1132405878',NULL,'aderbaldo@gmail.com','ssetevidas'),(10,'Gabriel','Filosofo','56987888822','112347698',NULL,' playboy@gmail.com','cachimbodapaz'),(11,'Geralda','Swift','12366688755','1132415878',NULL,'geralda@gmail.com','crushcrushcrush'),(12,'Itamar','Mulan','12366699755','1132425878',NULL,'itamarzinho@gmail.com','estudoerrado'),(13,'Juca','Muato','12366698755','1132435878',NULL,'juquinha@gmail.com','mascara'),(14,'Jorge','Campos','12366698755','1132445878',NULL,'jorge.campos@gmail.com','felicidade'),(15,'Jao','Vegas','12366698755','1132555878',NULL,'vegas.j@gmail.com','xepanasestrelas'),(16,'Andre','Goku','12366698755','1132405878',NULL,'andre.goku@gmail.com','kamehameha'),(17,'Victoria','Katsumi','66655533322','11961971223',1,'srta.katsumi@gmail.com','alecrimelimao');
-/*!40000 ALTER TABLE `pessoas` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `products`
 --
 
@@ -224,18 +226,17 @@ DROP TABLE IF EXISTS `requests`;
 CREATE TABLE `requests` (
   `id` int NOT NULL AUTO_INCREMENT,
   `idClient` int NOT NULL,
-  `amount` float NOT NULL,
   `date` varchar(12) NOT NULL,
   `statusPedido` int NOT NULL,
   `formadePagamento` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `cliente_idx` (`idClient`),
-  KEY `price_idx` (`amount`),
   KEY `fkstatuspedidos_idx` (`statusPedido`),
   KEY `fkpagamento_idx` (`formadePagamento`),
+  CONSTRAINT `fkclienteid` FOREIGN KEY (`idClient`) REFERENCES `client` (`id`),
   CONSTRAINT `fkpagamento` FOREIGN KEY (`formadePagamento`) REFERENCES `paymentform` (`idPayment`),
   CONSTRAINT `fkstatuspedidos` FOREIGN KEY (`statusPedido`) REFERENCES `status` (`idStatus`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -244,6 +245,7 @@ CREATE TABLE `requests` (
 
 LOCK TABLES `requests` WRITE;
 /*!40000 ALTER TABLE `requests` DISABLE KEYS */;
+INSERT INTO `requests` VALUES (1,2,'2021-05-20',1,1),(2,2,'2021-05-20',1,1),(3,2,'2021-05-20',1,1),(5,15,'2021-05-22',8,2),(6,15,'2021-05-22',8,2),(7,15,'2021-05-22',8,2),(8,3,'2021-05-23',2,2),(9,3,'2021-05-23',2,2),(10,14,'2021-05-23',1,1),(11,5,'2021-05-23',1,1),(12,3,'2021-05-23',1,3),(13,14,'2021-05-23',3,1),(14,5,'2021-05-23',3,2),(15,2,'2021-05-23',6,3),(16,2,'2021-05-23',6,3),(17,14,'2021-05-23',5,2),(18,10,'2021-06-25',7,2),(19,10,'2021-06-25',7,2);
 /*!40000 ALTER TABLE `requests` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -256,9 +258,9 @@ DROP TABLE IF EXISTS `status`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `status` (
   `idStatus` int NOT NULL AUTO_INCREMENT,
-  `status` varchar(45) DEFAULT NULL,
+  `statusPedido` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idStatus`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -267,7 +269,7 @@ CREATE TABLE `status` (
 
 LOCK TABLES `status` WRITE;
 /*!40000 ALTER TABLE `status` DISABLE KEYS */;
-INSERT INTO `status` VALUES (1,'Aguardando pagamento'),(2,'Pagamento aprovado'),(3,'Em separação'),(4,'Cancelado'),(5,'Enviado'),(6,'Entregue'),(7,'Devolução');
+INSERT INTO `status` VALUES (1,'Aguardando pagamento'),(2,'Pagamento aprovado'),(3,'Em separação'),(4,'Cancelado'),(5,'Enviado'),(6,'Entregue'),(7,'Devolução'),(8,'Cancelado');
 /*!40000 ALTER TABLE `status` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -280,12 +282,15 @@ DROP TABLE IF EXISTS `stock`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `stock` (
   `idStock` int NOT NULL AUTO_INCREMENT,
+  `codProductStock` int DEFAULT NULL,
   `amountReceived` int NOT NULL,
   `processedQuantity` int NOT NULL,
   `availableQuantity` int NOT NULL,
   `lockedQuantity` int NOT NULL,
   PRIMARY KEY (`idStock`),
-  CONSTRAINT `fkestoque` FOREIGN KEY (`idStock`) REFERENCES `requests` (`id`)
+  KEY `fkproductsstock_idx` (`codProductStock`),
+  CONSTRAINT `fkestoque` FOREIGN KEY (`idStock`) REFERENCES `requests` (`id`),
+  CONSTRAINT `fkproductsstock` FOREIGN KEY (`codProductStock`) REFERENCES `products` (`codProduct`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -306,19 +311,21 @@ DROP TABLE IF EXISTS `totalorders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `totalorders` (
+  `idOrdes` int NOT NULL AUTO_INCREMENT,
   `idProductOrder` int NOT NULL,
   `idClient` int NOT NULL,
   `name` varchar(100) NOT NULL,
   `price` float NOT NULL,
   `theamount` int NOT NULL,
   `date` date NOT NULL,
+  PRIMARY KEY (`idOrdes`),
   KEY `fkname_idx` (`name`),
   KEY `idProductOrder_idx` (`idProductOrder`,`name`,`price`),
   KEY `name_idx` (`price`),
   KEY `idClient_idx` (`idClient`),
-  CONSTRAINT `idClient` FOREIGN KEY (`idClient`) REFERENCES `pessoas` (`id`),
+  CONSTRAINT `idClient` FOREIGN KEY (`idClient`) REFERENCES `client` (`id`),
   CONSTRAINT `idProductOrder` FOREIGN KEY (`idProductOrder`) REFERENCES `products` (`codProduct`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -327,7 +334,7 @@ CREATE TABLE `totalorders` (
 
 LOCK TABLES `totalorders` WRITE;
 /*!40000 ALTER TABLE `totalorders` DISABLE KEYS */;
-INSERT INTO `totalorders` VALUES (380385,10,'Suporte para cpu com roda',62.48,1,'2021-08-20'),(402265,10,'Lápis preto com borracha redondo tabuada PO0072 Leo&Leo',7.37,5,'2021-08-20'),(435970,3,'Apoio ergonômico para pés Waleu',91.98,1,'2021-05-20'),(473141,2,'Brocal Escolar 3G Sortido Lantecor - Pacote com 12 Unidades',5.01,2,'2021-05-20'),(473141,2,'Brocal Escolar 3G Sortido Lantecor - Pacote com 12 Unidades',5.01,2,'2021-05-20'),(473141,2,'Brocal Escolar 3G Sortido Lantecor - Pacote com 12 Unidades',5.01,2,'2021-05-20'),(481435,3,'Agenda Diária Espiral Eco Línea Rosa 2021 Jandaia',7.37,7,'2021-05-23'),(481432,3,'Agenda Diária Espiral O Pequeno Príncipe Azul Escuro 2021 Jandaia',7.37,3,'2021-05-23'),(473129,14,'Lantejoula 06MM 3G Sortido Lantecor - Pacote com 12 Unidades',5.01,5,'2021-05-23'),(473129,15,'Lantejoula 06MM 3G Sortido Lantecor - Pacote com 12 Unidades',5.01,2,'2021-05-22'),(481432,10,'Agenda Diária Espiral O Pequeno Príncipe Azul Escuro 2021 Jandaia',7.37,1,'2021-06-25'),(473129,5,'Lantejoula 06MM 3G Sortido Lantecor - Pacote com 12 Unidades',5.01,5,'2021-05-23'),(473141,7,'Lantejoula 06MM 3G Sortido Lantecor - Pacote com 12 Unidades',5.01,2,'2021-05-22'),(481432,8,'Agenda Diária Espiral O Pequeno Príncipe Azul Escuro 2021 Jandaia',7.37,1,'2021-06-25');
+INSERT INTO `totalorders` VALUES (1,473141,2,'Brocal Escolar 3G Sortido Lantecor - Pacote com 12 Unidades',5.01,2,'2021-05-20'),(2,481435,3,'Agenda Diária Espiral Eco Línea Rosa 2021 Jandaia',7.37,7,'2021-05-23'),(3,481432,3,'Agenda Diária Espiral O Pequeno Príncipe Azul Escuro 2021 Jandaia',7.37,3,'2021-05-23'),(4,473129,14,'Lantejoula 06MM 3G Sortido Lantecor - Pacote com 12 Unidades',5.01,5,'2021-05-23'),(5,473129,15,'Lantejoula 06MM 3G Sortido Lantecor - Pacote com 12 Unidades',5.01,2,'2021-05-22'),(6,481432,10,'Agenda Diária Espiral O Pequeno Príncipe Azul Escuro 2021 Jandaia',7.37,1,'2021-06-25'),(7,473129,5,'Lantejoula 06MM 3G Sortido Lantecor - Pacote com 12 Unidades',5.01,5,'2021-05-23'),(9,473141,2,'Brocal Escolar 3G Sortido Lantecor - Pacote com 12 Unidades',5.01,2,'2021-05-20'),(10,481435,3,'Agenda Diária Espiral Eco Línea Rosa 2021 Jandaia',7.37,7,'2021-05-23'),(11,481432,3,'Agenda Diária Espiral O Pequeno Príncipe Azul Escuro 2021 Jandaia',7.37,3,'2021-05-23'),(12,473129,14,'Lantejoula 06MM 3G Sortido Lantecor - Pacote com 12 Unidades',5.01,5,'2021-05-23'),(13,473129,15,'Lantejoula 06MM 3G Sortido Lantecor - Pacote com 12 Unidades',5.01,2,'2021-05-22'),(14,481432,10,'Agenda Diária Espiral O Pequeno Príncipe Azul Escuro 2021 Jandaia',7.37,1,'2021-06-25'),(15,473129,5,'Lantejoula 06MM 3G Sortido Lantecor - Pacote com 12 Unidades',5.01,5,'2021-05-23'),(17,473141,2,'Brocal Escolar 3G Sortido Lantecor - Pacote com 12 Unidades',5.01,2,'2021-05-20'),(18,473141,2,'Brocal Escolar 3G Sortido Lantecor - Pacote com 12 Unidades',7.37,7,'2021-05-23'),(19,473141,2,'Brocal Escolar 3G Sortido Lantecor - Pacote com 12 Unidades',7.37,3,'2021-05-23'),(20,473129,14,'Lantejoula 06MM 3G Sortido Lantecor - Pacote com 12 Unidades',5.01,5,'2021-05-23'),(21,473129,15,'Lantejoula 06MM 3G Sortido Lantecor - Pacote com 12 Unidades',5.01,2,'2021-05-22');
 /*!40000 ALTER TABLE `totalorders` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -340,4 +347,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-20 23:22:45
+-- Dump completed on 2021-05-21 23:00:19
