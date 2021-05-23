@@ -32,36 +32,21 @@ on products.idDepartment = departament.idDept
 where products.highlighted = 1
 group by departament.nameDept;
 
--- Exibe clientes, endereço e cidade
-SELECT * from pessoas
+-- Exibe clientes, endereço e total da compra
+SELECT pessoas.nome, address.typePublicPlace,address.publicPlace, sum(totalorders.price) from pessoas
+inner join requests
+on pessoas.id = requests.idClient
+inner join totalorders
+on totalorders.idClient = requests.idClient
 inner join address
-on pessoas.id = address.idcliente
-inner join city
-on address.city = city.idcity;
-
---  errada MUDAR lista de cliente com o endereço e cidade
-SELECT sum(requests.statusPedido) 
-from pessoas
-inner join requests
-on pessoas.id = requests.idClient
-inner join status
-on status.statusPedido = requests.statusPedido
-group by requests.statusPedido;
-
--- errado
-select pessoas.id, pessoas.nome from pessoas
-inner join requests
-on pessoas.id = requests.idClient
-inner join status
-on status.statusPedido = requests.statusPedido
-group by requests.statusPedido;
-
--- errada
-select pessoas.nome,pessoas.CPF,pessoas.phone, sum(totalorders.price) as valortotal,
-address.typePublicPlace, address.publicPlace, address.zipCode, address.city,city.state, city.district from pessoas
-inner join pessoas
-on pessoas.id = address.idcliente
+on address.idCliente = pessoas.endereco
 group by pessoas.id;
 
 -- Mostra o nome, cpf, e-mail e senha
 select pessoas.nome,pessoas.CPF,pessoas.email,pessoas.senha from bancodedados.pessoas ;
+
+-- Exibe produtos vendidos
+SELECT totalorders.date,totalorders.idProductOrder, sum(totalorders.price) from products
+inner join products
+on products.codProduto = totalorders.idProductOrder
+group by products.codProduto;
