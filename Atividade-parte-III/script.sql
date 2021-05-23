@@ -50,3 +50,25 @@ SELECT totalorders.date,totalorders.idProductOrder, sum(totalorders.price) from 
 inner join products
 on products.codProduto = totalorders.idProductOrder
 group by products.codProduto;
+
+-- Mostra o valor total de compra por cliente
+select pessoas.nome, products.nameProduct,requests.statusPedido,statuspedidos.idStatus, sum(totalorders.price *totalorders.theamount) 
+as valortotal 
+from totalorders
+inner join pessoas 
+on totalorders.idClient = pessoas.id
+inner join products
+ on totalorders.idProductOrder = products.codProduct
+group by pessoas.id;
+
+-- mostra o status do pedido 
+select pessoas.nome, products.nameProduct,requests.statusPedido,statuspedidos.idStatus, sum(totalorders.price *totalorders.theamount) 
+as valortotal 
+from totalorders
+inner join pessoas 
+on totalorders.idClient = pessoas.id
+inner join products
+ on totalorders.idProductOrder = products.codProduct
+inner join requests 
+on requests.statusPedido = statuspedidos.idStatus
+group by pessoas.id;
