@@ -104,16 +104,16 @@ Estimativa: 2 dias
    - _Realizar dumps específicos do banco de dados._
 
   Estimativa: 4 dias
-   - [ ] Status da Sprint: WIP
+   - [ ] Status da Sprint: DONE
 
 |                         Tarefa                          | Estimativa |  Início  |  Término  |    Status     |
 |---------------------------------------------------------|------------|----------|-----------|---------------|
-|Modelar dados de produtos e departamentos	               |    2 hrs   | 17/05/21 | 18/05/21  |      WIP      |
-|Criar relações entre produtos e departamentos	           |    2 hrs   | 17/05/21 | 18/05/21  |      WIP      |
-|Modelar dados de clientes                               	|    2 hrs   | 17/05/21 | 18/05/21  |      WIP      |
-|Modelar dados de pedidos                                 |    2 hrs   | 17/05/21 | 18/05/21  |      WIP      |
-|Criar relações entre clientes e pedidos	                 |    2 hrs   | 19/05/21 | 19/05/21  |      WIP      |
-|Popular banco	                                           |    5 hrs   | 19/05/21 | 19/05/21  |      WIP      |
-|Realizar dumps do banco de dados                         |    4 hrs   | 19/05/21 | 19/05/21  |      WIP      |
-|Realizar os testes                                       |    4 hrs   | 20/05/21 | 20/05/21  |    PENDENTE   |
-|Entregar do projeto                                      |    15 min  | 20/05/21 | 20/05/21  |    PENDENTE   |
+|Modelar dados de produtos e departamentos	               |    2 hrs   | 17/05/21 | 18/05/21  |      DONE     |
+|Criar relações entre produtos e departamentos	           |    2 hrs   | 17/05/21 | 18/05/21  |      DONE     |
+|Modelar dados de clientes                               	|    2 hrs   | 17/05/21 | 18/05/21  |      DONE     |
+|Modelar dados de pedidos                                 |    2 hrs   | 17/05/21 | 18/05/21  |      DONE     |
+|Criar relações entre clientes e pedidos	                 |    2 hrs   | 19/05/21 | 19/05/21  |      DONE     |
+|Popular banco	                                           |    5 hrs   | 19/05/21 | 19/05/21  |      DONE     |
+|Realizar dumps do banco de dados                         |    4 hrs   | 19/05/21 | 19/05/21  |      DONE     |
+|Realizar os testes                                       |    4 hrs   | 20/05/21 | 20/05/21  |      DONE     |
+|Entregar do projeto                                      |    15 min  | 20/05/21 | 20/05/21  |      DONE     |
