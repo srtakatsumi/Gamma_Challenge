@@ -104,7 +104,7 @@ Estimativa: 2 dias
    - _Realizar dumps específicos do banco de dados._
 
   Estimativa: 4 dias
-   - [ ] Status da Sprint: DONE
+   - [x] Status da Sprint: DONE
 
 |                         Tarefa                          | Estimativa |  Início  |  Término  |    Status     |
 |---------------------------------------------------------|------------|----------|-----------|---------------|
