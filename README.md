@@ -6,6 +6,9 @@ Desafio hacker
 Contexto:
  <p>_Somos parte de uma equipe de desenvolvimento de software que está criando uma série de ferramentas para gestão de eCommerces. Neste sentido, precisamos atender algumas necessidades de gestores destas plataformas. Precisamos criar soluções para ajudar nossos gestores a extrair dados de inventários de seus respectivos estoques._</p>
 
+# Objetivo 
+
+ <p> Desenvolver um banco de dados que filtre as informações e informe o status de cada pedido.</p>
 
 <p>Sprints: <br></p>
        - Recursos Humanos:  Victoria e Professores da Gama <br>
